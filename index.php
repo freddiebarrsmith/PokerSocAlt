@@ -113,6 +113,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Contact us</h1>
+                    <p>
+                    If you have any feedback, queries or comments drop us contact us at any of the following:
+                    <br><br>
+                    <a href="mailto:nupokersoc@hotmail.co.uk?Subject=University%20of%20Nottingham%poker%20society" target="_top">Email us: nupokersoc@hotmail.co.uk</a>
+                    <br><br>
+                    <a href="https://www.facebook.com/groups/UoNPokerSociety/">Our facebook group</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -124,6 +131,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Leaderboard</h1>
+                    <p>Coming Soon...</p>
                 </div>
             </div>
         </div>
