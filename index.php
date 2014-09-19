@@ -92,6 +92,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Tournament Schedule</h1>
+                    <table align="center">
+                    <?php
+                        $row = 1;
+                        if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
+                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                                $num = count($data);
+                                echo "<br />\n";
+                                $row++;
+                                echo "<tr>";
+                                for ($c=0; $c < $num; $c++) {
+                                    echo "<td>" . $data[$c] . " </td>";
+                                }
+                                echo "</tr>";
+                            }
+                            fclose($handle);
+                        }
+                    ?>
+                    </table>
                 </div>
             </div>
         </div>
@@ -114,7 +132,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Leaderboard</h1>
-                    <table>
+                    <table align="center">
                     <?php
                         $row = 1;
                         if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
