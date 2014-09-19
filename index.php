@@ -77,7 +77,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img src="images/uonPokerIcon.png">
+                    <img src="Images/uonPokerIcon.png">
                     <h1>University of Nottingham Poker Society</h1>
                     <p>
                         This is the official website for the University of Nottingham Poker society. We will be putting on tournaments in The Den every Thursday and some events at DTD and online. We generally play Texas Hold'em but will be looking at introducing a few new styles of play. Along side tournament we usually hold either a cash game or a small SnG. We look forward to seeing you this coming year and welcome all! Begginers and professionals. We are friendly and will help you along with rules and regulations if you are confused.dsd
