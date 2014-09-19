@@ -60,10 +60,10 @@
                         <a class="page-scroll" href="#howtoplay">How to play</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact Us</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#leaderboard">Leaderboard</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="#contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -108,7 +108,36 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Leaderboard</h1>
+                    <table>
+                    <?php
+                        $row = 1;
+                        if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
+                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                                $num = count($data);
+                                echo "<br />\n";
+                                $row++;
+                                echo "<tr>";
+                                for ($c=0; $c < $num; $c++) {
+                                    echo "<td>" . $data[$c] . " </td>";
+                                }
+                                echo "</tr>";
+                            }
+                            fclose($handle);
+                        }
+                    ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="row">
@@ -121,18 +150,6 @@
                     <br><br>
                     <a href="https://www.facebook.com/groups/UoNPokerSociety/">Our facebook group</a>
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leaderboard Section -->
-    <section id="leaderboard" class="leaderboard-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Leaderboard</h1>
-                    <p>Coming Soon...</p>
                 </div>
             </div>
         </div>
