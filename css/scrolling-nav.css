@@ -40,28 +40,29 @@ of those sections to manage the look and feel of the site. */
 
 .schedule-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 50px;
     text-align: center;
     background: #eee;
 }
 
 .howtoplay-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 50px;
     text-align: center;
     background: #fff;
-}
-
-.contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
 }
 
 .leaderboard-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 50px;
+    text-align: center;
+    background: #eee;
+}
+
+.contact-section {
+    height: 30%;
+    padding-top: 50px;
     text-align: center;
     background: #fff;
 }
+
