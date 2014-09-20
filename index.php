@@ -25,162 +25,173 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+    <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">UoN Poker</a>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">UoN Poker</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from schedule link when scrolled up past schedule section -->
+                        <li class="hidden">
+                            <a class="page-scroll" href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#schedule">Schedule</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#howtoplay">How to play</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#leaderboard">Leaderboard</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
+            <!-- /.container -->
+        </nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from schedule link when scrolled up past schedule section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#schedule">Schedule</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#howtoplay">How to play</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#leaderboard">Leaderboard</a>
-                    </li>
-                     <li>
-                        <a class="page-scroll" href="#contact">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="container">
+                <div class="row">
                 <div class="col-lg-12">
-                    <img src="Images/uonPokerIcon.png">
-                    <h1>University of Nottingham Poker Society</h1>
-                    <p>
-                        This is the official website for the University of Nottingham Poker society. We will be putting on tournaments in The Den every Thursday and some events at DTD and online. We generally play Texas Hold'em but will be looking at introducing a few new styles of play. Along side tournament we usually hold either a cash game or a small SnG. We look forward to seeing you this coming year and welcome all! Begginers and professionals. We are friendly and will help you along with rules and regulations if you are confused.dsd
+                        <img src="Images/uonPokerIcon.png">
+                        <h1>University of Nottingham Poker Society</h1>
+                        <p>
+                            This is the official website for the University of Nottingham Poker society. We will be putting on tournaments in The Den every Thursday and some events at DTD and online. We generally play Texas Hold'em but will be looking at introducing a few new styles of play. Along side tournament we usually hold either a cash game or a small SnG. We look forward to seeing you this coming year and welcome all! Begginers and professionals. We are friendly and will help you along with rules and regulations if you are confused.dsd
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- schedule Section -->
-    <section id="schedule" class="schedule-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Tournament Schedule</h1>
-                    <table align="center">
-                    <?php
-                        $row = 1;
-                        if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
-                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                                $num = count($data);
-                                $row++;
-                                echo "<tr>";
-                                for ($c=0; $c < $num; $c++) {
-                                    echo "<td>" . $data[$c] . " </td>";
+        <!-- schedule Section -->
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Tournament Schedule</h1>
+                        </div>
+                           <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-striped">
+                            <?php
+                            $row = 1;
+                            if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
+                                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                                    $num = count($data);
+                                    
+                                    $row++;
+                                    echo "<tr>";
+                                    for ($c=0; $c < $num; $c++) {
+                                        echo "<td>" . $data[$c] . " </td>";
+                                    }
+                                    echo "</tr>";
                                 }
-                                echo "</tr>";
+                                fclose($handle);
                             }
-                            fclose($handle);
-                        }
-                    ?>
-                    </table>
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- howtoplay Section -->
-    <section id="howtoplay" class="howtoplay-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>How to play poker</h1>
+        </section>
+
+        <!-- howtoplay Section -->
+        <section id="howtoplay" class="howtoplay-section" style ="clear:both;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>How to play poker</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Leaderboard Section -->
-    <section id="leaderboard" class="leaderboard-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Leaderboard</h1>
-                    <table align="center">
-                    <?php
-                        $row = 1;
-                        if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
-                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                                $num = count($data);
-                                $row++;
-                                echo "<tr>";
-                                for ($c=0; $c < $num; $c++) {
-                                    echo "<td>" . $data[$c] . " </td>";
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="leaderboard-section">
+            <div class="container">
+              <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Leaderboard</h1>
+                        </div>
+                        </div>
+                           <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-striped">
+                            <?php
+                            $row = 1;
+                            if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
+                                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                                    $num = count($data);
+                                    
+                                    $row++;
+                                    echo "<tr>";
+                                    for ($c=0; $c < $num; $c++) {
+                                        echo "<td>" . $data[$c] . " </td>";
+                                    }
+                                    echo "</tr>";
                                 }
-                                echo "</tr>";
+                                fclose($handle);
                             }
-                            fclose($handle);
-                        }
-                    ?>
-                    </table>
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact us</h1>
-                    <p>
-                    If you have any feedback, queries or comments drop us contact us at any of the following:
-                    <br><br>
-                    <a href="mailto:nupokersoc@hotmail.co.uk?Subject=University%20of%20Nottingham%poker%20society" target="_top">Email us: nupokersoc@hotmail.co.uk</a>
-                    <br><br>
-                    <a href="https://www.facebook.com/groups/UoNPokerSociety/">Our facebook group</a>
-                    </p>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Contact us</h1>
+                        <p>
+                            If you have any feedback, queries or comments drop us contact us at any of the following:
+                            <br><br>
+                            <a href="mailto:nupokersoc@hotmail.co.uk?Subject=University%20of%20Nottingham%poker%20society" target="_top">Email us: nupokersoc@hotmail.co.uk</a>
+                            <br><br>
+                            <a href="https://www.facebook.com/groups/UoNPokerSociety/">Our facebook group</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+        <!-- jQuery Version 1.11.0 -->
+        <script src="js/jquery-1.11.0.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
+        <!-- Scrolling Nav JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/scrolling-nav.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
