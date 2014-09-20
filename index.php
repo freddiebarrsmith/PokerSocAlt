@@ -98,7 +98,6 @@
                         if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
                             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                                 $num = count($data);
-                                echo "<br />\n";
                                 $row++;
                                 echo "<tr>";
                                 for ($c=0; $c < $num; $c++) {
@@ -138,7 +137,6 @@
                         if (($handle = fopen("testdata.csv", "r")) !== FALSE) {
                             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                                 $num = count($data);
-                                echo "<br />\n";
                                 $row++;
                                 echo "<tr>";
                                 for ($c=0; $c < $num; $c++) {
